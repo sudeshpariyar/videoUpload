@@ -1,0 +1,51 @@
+<app-component-wrapper>
+  <div class="upload__wrapper">
+    <mat-card class="upload__card__wrapper">
+      <mat-card-header>
+        <h6>Upload Video</h6>
+      </mat-card-header>
+      <form
+        [formGroup]="videoUploadForm"
+        (ngSubmit)="handleSubmit()"
+        class="upload__form"
+      >
+        <mat-card-content class="upload__card__content__wrapper">
+          <div class="upload__card__content__left">
+            <input
+              id="file"
+              type="file"
+              name="file"
+              (change)="onFileSelected($event)"
+            />
+          </div>
+          <div class="upload__card__content__right">
+            <mat-form-field class="login__input">
+              <mat-label>Title</mat-label>
+              <input
+                type="text"
+                matInput
+                formControlName="title"
+                placeholder="Title"
+              />
+            </mat-form-field>
+            <mat-form-field class="login__input">
+              <mat-label>Description</mat-label>
+              <input
+                type="text"
+                matInput
+                formControlName="description"
+                placeholder="Description"
+              />
+            </mat-form-field>
+            <button mat-flat-button type="submit">
+              <strong>Upload</strong>
+            </button>
+          </div>
+          <ng-container *ngIf="errorMessage">
+            <app-custom-error [errorMessage]="errorMessage" />
+          </ng-container>
+        </mat-card-content>
+      </form>
+    </mat-card>
+  </div>
+</app-component-wrapper>

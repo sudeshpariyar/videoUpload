@@ -1,0 +1,19 @@
+<app-component-wrapper>
+  <ng-container *ngIf="errorStatus === 401; else videoContent">
+    <app-custom-not-authinticated></app-custom-not-authinticated>
+  </ng-container>
+  <ng-template #videoContent>
+    <div class="viewVideo__wrapper" *ngIf="videoData">
+      <video [src]="path" class="video__box__wrapper" controls>
+        <source [autofocus]="true" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div class="video__description">
+        <span>
+          <h4>{{ videoData.title }}</h4>
+        </span>
+        <span> Description: {{ videoData.description }} </span>
+      </div>
+    </div>
+  </ng-template>
+</app-component-wrapper>

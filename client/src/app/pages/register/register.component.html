@@ -1,0 +1,43 @@
+<div class="register__wrapper">
+  <p class="register__title">Register</p>
+  <form [formGroup]="register" (ngSubmit)="handleRegister()">
+    <mat-form-field class="register__input">
+      <mat-label>Email</mat-label>
+      <input
+        type="email"
+        matInput
+        formControlName="email"
+        placeholder="Ex. pat@example.com"
+        email
+      />
+    </mat-form-field>
+    <mat-form-field class="register__input">
+      <mat-label>Password</mat-label>
+      <input
+        type="password"
+        matInput
+        formControlName="password"
+        placeholder="password"
+      />
+    </mat-form-field>
+    <mat-form-field class="register__input">
+      <mat-label>Confirm Password</mat-label>
+      <input
+        type="password"
+        matInput
+        formControlName="confirmPassword"
+        placeholder="password"
+      />
+    </mat-form-field>
+    <ng-container *ngIf="errorMessage">
+      <app-custom-error [errorMessage]="errorMessage" />
+    </ng-container>
+
+    <div class="register__buttons">
+      <button mat-raised-button color="primary" type="submit">Register</button>
+      <button mat-raised-button color="primary" (click)="handleLoginRoute()">
+        Already have an account? <strong>Login</strong>
+      </button>
+    </div>
+  </form>
+</div>

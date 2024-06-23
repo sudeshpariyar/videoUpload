@@ -1,0 +1,16 @@
+<div>
+  <h4 class="landing__welcome__message">Welcome to VideoTranslator</h4>
+  <div class="landing__starter">
+    <span>
+      {{ allowUploadVideo ? "Lets Get Started," : "Please SingIn to procede." }}
+    </span>
+    <button
+      [disabled]="!allowUploadVideo"
+      mat-raised-button
+      color="primary"
+      (click)="handleUpload()"
+    >
+      Upload Video
+    </button>
+  </div>
+</div>

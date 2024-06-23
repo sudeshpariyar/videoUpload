@@ -1,0 +1,56 @@
+.upload__wrapper {
+  margin-top: 2.5rem;
+  color: #ffd7f5;
+}
+
+.upload__card__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+.upload__form {
+  width: 100%;
+}
+input[type="file"]::file-selector-button {
+  border: 1px solid #6c5ce7;
+  padding: 0.8rem 2rem;
+  border-radius: 0.5rem;
+  background-color: rgb(129, 0, 129);
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+input[type="file"]::file-selector-button:hover {
+  background-color: rgb(223, 132, 223);
+  color: rgb(129, 0, 129);
+  border: 1px solid white;
+}
+.upload__card__content__wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.upload__card__content__left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed #ffd7f5;
+  padding: 2rem;
+}
+.upload__card__content__right {
+  display: flex;
+  flex-direction: column;
+}
+@media only screen and (max-width: 600px) {
+  .upload__card__content__wrapper {
+    grid-template-columns: 1fr;
+  }
+  .upload__card__wrapper {
+    padding: 1rem;
+  }
+}

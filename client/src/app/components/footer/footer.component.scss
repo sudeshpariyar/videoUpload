@@ -1,0 +1,21 @@
+.footer__wrapper {
+  background-color: rgb(82, 18, 75);
+  padding-block: 1.5rem;
+  color: #ffd7f5;
+  margin-top: 1.5rem;
+}
+.footer__grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+}
+.footer__description {
+  color: #d7b2ce;
+  font-size: 0.9rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .footer__grid {
+    grid-template-columns: 1fr;
+  }
+}

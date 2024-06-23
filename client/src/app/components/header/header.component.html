@@ -1,0 +1,17 @@
+<div class="main__header__wrapper">
+  <app-component-wrapper>
+    <div class="header__wrapper">
+      <div class="header__title" routerLink="/">VideoTranslator</div>
+      <div class="header__right">
+        <ng-container *ngIf="userName">
+          <span>
+            Welcome, <strong>{{ userName }}</strong>
+          </span>
+        </ng-container>
+        <button mat-raised-button color="primary" (click)="handleClick()">
+          {{ showLogoutButton ? "Logout" : "Sign In" }}
+        </button>
+      </div>
+    </div>
+  </app-component-wrapper>
+</div>

@@ -1,0 +1,35 @@
+<div class="login__wrapper">
+  <p class="login__title">Login</p>
+  <form [formGroup]="login">
+    <mat-form-field class="login__input">
+      <mat-label>Email</mat-label>
+      <input
+        type="email"
+        matInput
+        formControlName="email"
+        placeholder="Ex. pat@example.com"
+      />
+    </mat-form-field>
+    <mat-form-field class="login__input">
+      <mat-label>Password</mat-label>
+      <input
+        type="password"
+        matInput
+        formControlName="password"
+        placeholder="password"
+      />
+    </mat-form-field>
+    <ng-container *ngIf="errorMessage">
+      <app-custom-error [errorMessage]="errorMessage" />
+    </ng-container>
+
+    <div class="login__buttons">
+      <button mat-raised-button color="primary" (click)="handleLogin()">
+        Login
+      </button>
+      <button mat-raised-button color="primary" (click)="handleRegisterRoute()">
+        Do not have an account? <strong>Register</strong>
+      </button>
+    </div>
+  </form>
+</div>
