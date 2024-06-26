@@ -55,7 +55,13 @@ export class VideoUploadComponent {
 
   onFileSelected = (event: any) => {
     if (event.target.files && event.target.files.length) {
-      this.videoFile = event.target.files[0];
+      const fileType = event.target.files[0].type.split('/');
+      if (fileType[0] === 'video') {
+        this.errorMessage = '';
+        this.videoFile = event.target.files[0];
+      } else {
+        this.errorMessage = 'Video File is required';
+      }
     }
   };
 

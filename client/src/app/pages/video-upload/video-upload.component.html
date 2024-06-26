@@ -37,7 +37,11 @@
                 placeholder="Description"
               />
             </mat-form-field>
-            <button mat-flat-button type="submit">
+            <button
+              mat-flat-button
+              type="submit"
+              [disabled]="videoUploadForm.status === 'INVALID' || !videoFile"
+            >
               <strong>Upload</strong>
             </button>
           </div>
